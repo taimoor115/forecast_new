@@ -1,0 +1,109 @@
+/* Search highlighting styles */
+.search-match {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .current-search-match {
+    box-shadow: 0 0 0 2px rgba(147, 51, 234, 0.3);
+    border-radius: 4px;
+  }
+  
+  /* Highlight mark styling */
+  mark {
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  
+  /* Default search match highlighting */
+  mark.search-highlight {
+    background-color: rgba(255, 235, 59, 0.6);
+    color: #713f12;
+  }
+  
+  /* Current/active search match highlighting */
+  mark.current-search-highlight {
+    background-color: rgba(147, 51, 234, 0.4);
+    color: #581c87;
+    font-weight: 600;
+    box-shadow: 0 0 0 1px rgba(147, 51, 234, 0.5);
+  }
+  
+  /* Hover effects for search matches */
+  .search-match:hover {
+    background-color: rgba(255, 235, 59, 0.1) !important;
+  }
+  
+  .current-search-match:hover {
+    background-color: rgba(147, 51, 234, 0.1) !important;
+    box-shadow: 0 0 0 2px rgba(147, 51, 234, 0.4);
+  }
+  
+  /* Animation for scrolling to matches */
+  @keyframes highlightPulse {
+    0% { 
+      background-color: rgba(147, 51, 234, 0.2);
+      transform: scale(1);
+    }
+    50% { 
+      background-color: rgba(147, 51, 234, 0.3);
+      transform: scale(1.01);
+    }
+    100% { 
+      background-color: rgba(147, 51, 234, 0.1);
+      transform: scale(1);
+    }
+  }
+  
+  .current-search-match {
+    animation: highlightPulse 0.6s ease-in-out;
+  }
+  
+  /* Search input focus styles */
+  .search-input:focus {
+    outline: none;
+    ring: 2px;
+    ring-color: #7c3aed;
+    border-color: transparent;
+  }
+  
+  /* Search navigation buttons */
+  .search-nav-button {
+    padding: 4px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .search-nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-nav-button:active {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Search results counter */
+  .search-counter {
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 500;
+  }
+  
+  /* No results message */
+  .no-search-results {
+    color: #9ca3af;
+    font-style: italic;
+  }
+  
+  /* Responsive adjustments for mobile */
+  @media (max-width: 768px) {
+    mark {
+      padding: 1px 2px;
+      font-size: 0.9em;
+    }
+    
+    .search-counter {
+      font-size: 11px;
+    }
+  }
